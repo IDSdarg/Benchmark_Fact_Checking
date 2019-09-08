@@ -4,9 +4,10 @@ This benchmark continues our previous work **[P. Huynh, P. Papotti, 2017](http:/
 It is an addition material of the publication "A Benchmark for Fact Checking Algorithms Built on Knowledge Bases", from **[P. Huynh, P. Papotti](http://www.eurecom.fr/en/publication/5996/download/data-publi-5996.pdf)**, accepted to International Conference on Information and Knowledge Management (CIKM), 2019
 
 ## Download & Install
-1. The benchmark server is written by **[Nodejs](https://nodejs.org/en/download/)**
+1. The benchmark server is written by **[Nodejs](https://nodejs.org/en/download/)**. Follow `package.json` to install dependencies.
 2. Follow base folders for downloading and installing benchmarking systems: `Knowledge Linker (KL)`, `Discriminative Predicate Path (KGMiner)`, `Path Ranking Algorithm (PRA)`, `Subgraph Feature Extraction (SFE)`, `Parallel Graph Embedding (Para_GraphE)` 
-3. Each system has some modifications from the original version, according to the experiments considered in this work.
+   
+   Each system has some modifications from the original version, according to the experiments considered in this work.
 
 
 
