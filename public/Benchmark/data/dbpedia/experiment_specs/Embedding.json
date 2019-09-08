@@ -1,0 +1,21 @@
+{
+  "graph": {
+    "name":"dbpedia",
+    "relation_sets":[{
+      "relation file":"labeled_edges.tsv",
+      "is kb":true
+    }]
+  },
+  "split": {"name": "Full"
+   },
+  "operation": {
+    "method": "TransE",
+    "features": {
+      "embed_dim": 100,
+      "nprocs": 8,
+      "learning_rate": 0.01,
+      "nepoches": 1500
+    }
+
+}
+}

@@ -1,0 +1,516 @@
+<!-- 	Huynh Viet Phi, March 2018
+ 			GNU LESSER GENERAL PUBLIC LICENSE Version 2.1, February 1999
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+  </head>
+<body topmargin="0" leftmargin="0" >
+
+<table border="0" width="100%" cellspacing="0" cellpadding="10">
+  <tr>
+    <td nowrap bgcolor="#E6E6FA" valign="top">&nbsp;
+      <!-- <p><b><font face="Arial"><a href="index.htm">Introduction</a></font></b></p>  -->
+    <!-- <p><b><font face="Arial"><a href="generator.htm">Scenario Generator</a></font></b></p> -->   
+    </td>
+    <td valign="top" width="100%">
+      <h1 align="center"><font color="#0000FF" face="Arial">Synthetic 
+        Scenario Generation & Benchmark Fact Checking</font></h1>    
+      <form >
+        <table width="100%" border="0" cellpadding="2" cellspacing="1"> 
+        </table>
+        <p>
+          <div align="center"> 
+            <table border="0" cellpadding="2" cellspacing="1" style="border:1px solid #999;" width="15%">
+            <tr>
+              <th bgcolor="#A6E6FA" bordercolor="#A6E6FA">
+                <font color="#800000" face="Arial">Settings</font>
+              </th>
+              <th bgcolor="#A6E6FA" bordercolor="#A6E6FA">
+                <font color="#800000" face="Arial">Value</font>
+              </th>
+            </tr>
+       
+            <tr>
+              <th nowrap>
+                <font face="Arial">Knowledge Base</font>
+              </th>
+              <th>
+                <select name="kb" id="kb" style="width:200px;"  >
+                  <option disabled selected value> -- select a knowledge base -- </option>
+                  <option value="dbpedia" >DBPedia</option>
+                </select>
+              </th>
+            </tr>
+
+            <tr>
+              <th nowrap>
+                <font face="Arial">Predicate</font>
+              </th>
+              <th>
+                  <select  id="predicate" name="predicate" style="width:200px;" >
+                  </select>
+              </th> 
+            </tr>
+          </div> 
+          </div>      
+          <div align="center">
+            <table border="0" cellpadding="2" cellspacing="1" >
+            <tr>
+              <div id="loading_predicate" style="display:none;">
+                Predicate checking ... Please Wait....
+              </div>
+              <div id="output_predicate" style="padding: 10px; text-align: center; display:none">
+                <p align="center"><font id="info_predicate" color="#800000"></font> 
+              </div>
+            </tr>
+          </div>
+        </p>     
+      </form>
+
+
+
+      <form >
+          <table width="100%" border="0" cellpadding="2" cellspacing="1"> 
+          </table>
+          <p>
+          <div align="center"> 
+            <table border="0" cellpadding="2" cellspacing="1" style="border:1px solid #999;" width="22%">
+            <tr>
+              <th bgcolor="#A6E6FA" bordercolor="#A6E6FA">
+                <font color="#800000" face="Arial">Scenario Property</font>
+              </th>
+              <th bgcolor="#A6E6FA" bordercolor="#A6E6FA">
+                <font color="#800000" face="Arial">Train</font>
+              </th>
+              <th bgcolor="#A6E6FA" bordercolor="#A6E6FA">
+                <font color="#800000" face="Arial">Test</font>
+              </th>
+            </tr>
+      
+            <tr>
+              <th nowrap>
+                <font face="Arial">Level of difficulty</font>
+              </th>
+              <th>
+                <select name="train_level" id="train_level" style="width:160px;" >
+                  <option disabled selected value> -- select a level -- </option>
+                  <option value="easy"  >Easy</option>
+                  <option value="medium" >Medium</option>
+                  <option value="hard" >Hard</option>
+                </select>
+              </th>
+              <th>
+                <select name="test_level" id="test_level" style="width:160px;" >
+                  <option disabled selected value> -- select a level -- </option>
+                  <option value="easy"  >Easy</option>
+                  <option value="medium" >Medium</option>
+                  <option value="hard" >Hard</option>
+                </select>
+              </th>
+            </tr>
+        
+            <tr>   
+              <th>
+                <font face="Arial">Transparency</font>
+              </th>
+              <th>
+                <input type="text" id="train_consist" name="train_consist" value="0.0" size="18">
+              </th>
+              <th>
+                <input type="text" id="test_consist" name="test_consist" value="0.0" size="18" >
+              </th>
+            </tr>
+              
+            <tr> 
+              <th>
+                <font face="Arial" >Homogeneity</font>
+              </th>
+              <th>
+                <input type="text" id="train_homo"  value="0.0" size="18">
+              </th>
+              <th>
+                <input type="text" id="test_homo"  value="0.0" size="18">
+              </th>
+            </tr>
+	    
+
+            <tr>
+              <th nowrap>
+                <font face="Arial" >Popularity</font>
+              </th>
+              <th>
+                <select name="train_popular" id="train_popular" style="width:160px;" >
+                  <option disabled selected value> -- select a level -- </option>
+                  <option value="popular"  >Popular</option>
+                  <option value="nopopular" >Non-popular</option>
+                  <option value="random" >Random</option>
+                </select>
+              </th>
+              <th>
+                <select name="test_popular" id="test_popular" style="width:160px;"  >
+                  <option disabled selected value> -- select a level -- </option>
+                  <option value="popular"  >Popular</option>
+                  <option value="nopopular" >Non-popular</option>
+                  <option value="random" >Random</option>
+                </select>
+              </th>
+            </tr>
+	    
+            <tr> 
+              <th>
+                <font face="Arial">Ratio of Positive/Negative</font>
+              </th>
+              <th>
+                <input type="text" id="train_pos_neg"  value="1.0" size="18">
+              </th>
+              <th>
+                <input type="text" id="test_pos_neg"  value="1.0" size="18">
+              </th>
+            </tr>
+
+
+            <tr>
+              <th>
+                <font face="Arial">Scenario size</font>
+              </th>
+              <th>
+                <input type="text" id="train_size_scenario"  value="300" size="18">
+              </th>
+              <th>
+                <input type="text" id="test_size_scenario"  value="300" size="18">
+              </th>
+
+            </tr>  
+
+            <tr>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+            </tr>
+            <tr>
+              <th>
+              </th>
+              <th>
+                <input type="submit" value="Generate Train Scenario" name="train_generate" id="train_generate" >
+              </th>
+              <th>
+                <input type="submit" value="Generate Test Scenario" name="test_generate" id="test_generate" >
+              </th>
+            </tr>  
+
+            <tr>
+              <th>
+              </th>
+              <th>
+                  <div id="loading_train" style="display:none;">
+                    Generating Please Wait....
+                  </div>
+                  <div id="output_train_scenario" style="padding: 10px; text-align: center; display:none">
+                    <p align="center"> <font face="Arial"> [<a id="train" href="" class="train" >Train Scenario</a>] &nbsp; </font> 
+                  </div>
+              </th>
+              <th>
+                  <div id="loading_test" style="display:none;">
+                    Generating Please Wait....
+                  </div>
+                  <div id="output_test_scenario" style="padding: 10px; text-align: center; display:none">
+                    <p align="center"><font face="Arial"> [<a id="test" href="" class="test" >Test Scenario</a>] &nbsp; </font> 
+                  </div>
+              </th>
+            </tr>            
+            <tr>
+              <th></th>
+            </tr>
+   
+      
+          </div>      
+<!--           <div >
+            <table  width="22%">
+            <tr>
+              <td></td>
+              <td>              
+                <input type="submit" value="Generate Test Scenario" name="test_generate" id="test_generate" >
+              </td>
+              <td>             
+                <input type="submit" value="Generate Test Scenario" name="test_generate" id="test_generate" >
+              </td>
+
+            </tr>
+            <tr>
+              <div id="loading_test" style="display:none;">
+                Generating Please Wait....
+              </div>
+              <div id="output_test_scenario" style="padding: 10px; text-align: center; display:none">
+                <p align="center"><font id="info_test_generate" color="#800000" >Scenario Generated:</font> <font face="Arial"> [<a id="test" href="" class="test" >Test Scenario</a>] &nbsp; </font> 
+              </div>
+              
+              <td>
+              <div style="clear: both; padding: 20px; text-align: center; ">
+                <input type="submit" value="Generate Test Scenario" name="test_generate" id="test_generate" >
+              </div>
+              <div id="loading_test" style="display:none;">
+                Generating Please Wait....
+              </div>
+              <div id="output_test_scenario" style="padding: 10px; text-align: center; display:none">
+                <p align="center"><font id="info_test_generate" color="#800000" >Scenario Generated:</font> <font face="Arial"> [<a id="test" href="" class="test" >Test Scenario</a>] &nbsp; </font> 
+              </div>
+              </td>
+            </tr>
+          </div> -->
+          </p>       
+      </form>
+ 
+
+
+
+      <form>
+        <table width="100%" border="0" cellpadding="2" cellspacing="1"> 
+        </table>
+        <p>         
+          <div align="center">
+            <table border="0" cellpadding="2" cellspacing="1" style="border:1px solid #999;" width="30%">
+            <!-- <tr><p align="center"><font color="#800000">Due to memory constraint, only KGMiner running on the server</font> </tr> -->
+            <tr>
+              <th bgcolor="#A6E6FA" bordercolor="#A6E6FA">
+                <font color="#800000" face="Arial">Algorithm_1</font>
+              </th>
+              <th bgcolor="#A6E6FA" bordercolor="#A6E6FA">
+                <font color="#800000" face="Arial">Algorithm_2</font>
+              </th>
+            </tr>
+
+	          <tr>
+              <th>
+                <select name="algorithm" id="algorithm" >
+                  <option value="kl" selected="selected">KL</option>
+                  <option value="kgminer">KG-Miner</option>
+                  <option value="sfe">SFE</option>
+                  <!-- <option value="pra">PRA</option> -->
+                  <option value="transe">TransE</option>
+		  <option value="rule">Rudik</option>
+   s               <!-- <option value="transh">TransH</option> -->
+                </select>
+              </th>
+              <th>
+                <select name="algorithm_2" id="algorithm_2" >
+                  <option value="kl" selected="selected">KL</option>
+                  <option value="kgminer">KG-Miner</option>
+                  <option value="sfe">SFE</option>
+                  <!-- <option value="pra">PRA</option> -->
+                  <option value="transe">TransE</option>
+                  <option value="rule">Rudik</option>
+                  <!-- <option value="transh">TransH</option> -->
+                </select>
+              </th>
+            </tr>
+
+            <tr>
+              <th>
+                <div id="kl_1" style="display:block">
+                  <font face="Arial" size="2"><em>closure</em></font>
+                  <select id="closure" name="closure" >
+                    <option value="metric" selected="selected">Metric</option>
+                    <option value="ultra_metric">Ultra-metric</option>
+                  </select>
+                </div>   
+                <div id="kg_1" style="display:none">
+                  <font face="Arial" size="2"><em>max length</em></font>
+                  <input type="text" id="max_depth" name="max_depth" value="3" size="6">
+                </div>
+                <div id="sfe_1" style="display:none">
+                  <font face="Arial" size="2"><em>subgraph length</em></font>
+                  <input type="text" id="subgraph_depth" name="subgraph_depth" value="1" size="6">
+                </div>
+                <div id="pra_1" style="display:none">
+                  <font face="Arial" size="2"><em>walk per source</em></font>
+                  <input type="text" id="w_s" name="w_s" value="200" size="6">
+                </div>
+                <div id="trans_1" style="display:none">
+                  <font face="Arial" size="2"><em>embedding size</em></font>
+                  <input type="text" id="e_s" name="e_s" value="100" size="6">
+                </div>
+              </th>   
+              <th>
+                <div id="kl_12" style="display:block">
+                  <font face="Arial" size="2"><em>closure</em></font>
+                  <select id="closure_2" name="closure" >
+                    <option value="metric" selected="selected">Metric</option>
+                    <option value="ultra_metric">Ultra-metric</option>
+                  </select>
+                </div>   
+                <div id="kg_12" style="display:none">
+                  <font face="Arial" size="2"><em>max length</em></font>
+                  <input type="text" id="max_depth_2" name="max_depth" value="3" size="6">
+                </div>
+                <div id="sfe_12" style="display:none">
+                  <font face="Arial" size="2"><em>subgraph length</em></font>
+                  <input type="text" id="subgraph_depth_2" name="subgraph_depth" value="1" size="6">
+                </div>
+                <div id="pra_12" style="display:none">
+                  <font face="Arial" size="2"><em>walk per source</em></font>
+                  <input type="text" id="w_s_2" name="w_s" value="200" size="6">
+                </div>
+                <div id="trans_12" style="display:none">
+                  <font face="Arial" size="2"><em>embedding size</em></font>
+                  <input type="text" id="e_s_2" name="e_s" value="100" size="6">
+                </div>
+              </th>             
+            </tr>
+
+            <tr>
+              <th>
+                <div id="kl_2" style="display:block">
+                  <font face="Arial" size="2"><em>Is directed ?</em></font>
+                  <select id="is_directed" name="is_directed" >
+                    <option value="false" selected="selected">False</option>
+                    <option value="true">True</option>
+                  </select>
+                </div>
+                <div id="pra_2" style="display:none">
+                  <font face="Arial" size="2"><em>walk per path</em></font>
+                  <input type="text" id="w_p" name="w_p" value="100" size="6">
+                </div>
+                <div id="trans_2" style="display:none">
+                  <font face="Arial" size="2"><em>learning rate</em></font>
+                  <input type="text" id="l_r" name="l_r" value="0.01" size="6">
+                </div>
+              </th> 
+              <th>
+                <div id="kl_22" style="display:block">
+                  <font face="Arial" size="2"><em>Is directed ?</em></font>
+                  <select id="is_directed_2" name="is_directed" >
+                    <option value="false" selected="selected">False</option>
+                    <option value="true">True</option>
+                  </select>
+                </div>
+                <div id="pra_22" style="display:none">
+                  <font face="Arial" size="2"><em>walk per path</em></font>
+                  <input type="text" id="w_p_2" name="w_p" value="100" size="6">
+                </div>
+                <div id="trans_22" style="display:none">
+                  <font face="Arial" size="2"><em>learning rate</em></font>
+                  <input type="text" id="l_r_2" name="l_r" value="0.01" size="6">
+                </div>
+              </th> 
+            </tr>
+
+            <tr>
+              <th>
+                <div id="kl_3" style="display:block">
+                  <font face="Arial" size="2"><em>weight type</em></font>
+                  <select id="weight" name="weight" >
+                    <option value="logdegree" selected="selected">Log-degree</option>
+                    <option value="degree">Degree</option>
+                  </select>
+                </div>
+              </th> 
+              <th>
+                <div id="kl_32" style="display:block">
+                  <font face="Arial" size="2"><em>weight type</em></font>
+                  <select id="weight_2" name="weight" >
+                    <option value="logdegree" selected="selected">Log-degree</option>
+                    <option value="degree">Degree</option>
+                  </select>
+                </div>
+              </th> 
+            </tr>
+ 
+            <tr>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+            </tr>
+
+
+
+            <tr>
+              <th>
+                <div style="clear: both; padding: 10px; text-align: center; ">
+                  <input type="submit" value="Run Fact Checking" name="fact_check" id="fact_check"> 
+                </div>
+              </th>
+              <th>
+                <div style="clear: both; padding: 10px; text-align: center; ">
+                  <input type="submit" value="Run Fact Checking" name="fact_check" id="fact_check_2"> 
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div id="loading" style="padding: 10px; text-align: center; display:none">
+                  Running fact checking Please Wait....
+                </div>
+                <div id="output" style="padding: 10px; text-align: center; display:none">                
+                  <p align="center"><font face="Arial">[<a id="spec" href= " " class="spec">Exp. Spec.</a>] [<a id="score"  href="">  Benchmark Result</a>] <font id="auroc" color="#800000">AUROC</font>&nbsp; </font> 
+                  </p>           
+                  <img alt="Poster" id="poster" width="280" height="280" src="">                
+                </div>
+              </th>
+              <th>
+                <div id="loading_2" style="padding: 10px; text-align: center; display:none">
+                  Running fact checking Please Wait....
+                </div>
+
+                <div id="output_2" style="padding: 10px; text-align: center; display:none">                
+                  <p align="center"><font face="Arial">[<a id="spec_2" href= " " class="spec_2">Exp. Spec.</a>] [<a id="score_2"  href="">  Benchmark Result</a>] <font id="auroc_2" color="#800000">AUROC</font>&nbsp; </font> 
+                  </p>           
+                  <img alt="Poster_2" id="poster_2" width="280" height="280" src="">                
+                </div>
+              </th>
+            </tr>
+            </table>
+          </div>
+   	
+
+
+
+<!--           <div id="output" style="padding: 10px; text-align: center; display:none">
+          
+            <p align="center"><font color="#800000">Results:</font> <font face="Arial">[<a id="spec" href= " " class="spec">Experiment Spec</a>] [<a id="score"  href="">  Benchmark Result</a>] [<font id="auroc" color="#800000">AUROC</font>]&nbsp; </font> 
+            </p>
+          
+       
+              <img alt="Poster" id="poster" width="400" height="400" src="">
+           
+          </div> -->
+
+        </p>
+      </form>   
+    </td>
+  </tr>
+</table>
+
+
+<table border="0" width="100%" bgcolor="#A6E6FA" cellspacing="0" cellpadding="2">
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+    <p align="center"><font color="#800000">(c) 2018</font></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"
+        integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+        crossorigin="anonymous"></script>
+<script src="/clients.js"></script>
+
+</body>
+</html>

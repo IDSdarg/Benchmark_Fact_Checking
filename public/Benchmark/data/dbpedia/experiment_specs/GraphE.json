@@ -1,0 +1,22 @@
+{
+  "graph": {
+    "name":"dbpedia",
+    "relation_sets":[{
+      "relation file":"labeled_edges.tsv",
+      "is kb":true
+    }]
+  },
+  "split": {"name": "nearestCity",
+            "test_file": "../data/dbpedia/splits/nearestCity/test_c0.5_h1.0_s300_r0.2_scenario.tsv"
+   },
+  "operation": {
+    "method": "TransE",
+    "features": {
+      "embed_dim": 100,
+      "nprocs": 12,
+      "learning_rate": 0.01,
+      "nepoches": 1500
+    }
+
+}
+}

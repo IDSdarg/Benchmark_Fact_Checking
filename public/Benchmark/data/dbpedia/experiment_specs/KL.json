@@ -1,0 +1,21 @@
+{
+  "graph": {
+    "name":"dbpedia",
+    "relation_sets":[{
+      "relation file":"labeled_edges.tsv",
+      "is kb":true
+    }]
+  },
+  "split": {"name": "nearestCity",
+            "train_file": "../data/dbpedia/splits/nearestCity/train_c1.0_h1.0_s100_r1.0_popular_scenario.tsv",
+            "test_file": "../data/dbpedia/splits/nearestCity/train_c1.0_h1.0_s100_r1.0_popular_scenario.tsv" 
+   },
+  "operation": {
+    "features": {
+      "closure" : "metric",
+      "weight" : "logdegree" ,
+      "is_directed" : false,
+      "nprocs": 5
+    }
+}
+}

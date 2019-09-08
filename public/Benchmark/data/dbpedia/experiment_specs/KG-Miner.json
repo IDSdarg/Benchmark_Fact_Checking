@@ -1,0 +1,19 @@
+{
+  "graph": {
+    "name":"dbpedia",
+    "relation_sets":[{
+      "relation file":"labeled_edges.tsv",
+      "is kb":true
+    }]
+  },
+  "split": {"name": "nearestCity",
+            "level": "easy"  
+   },
+  "operation": {
+    "features": {
+      "max_depth": 3,
+      "is_directed": false,
+      "nprocs": 5
+    }
+}
+}
