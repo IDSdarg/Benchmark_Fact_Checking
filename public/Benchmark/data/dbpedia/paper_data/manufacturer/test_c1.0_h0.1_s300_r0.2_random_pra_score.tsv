@@ -1,9 +1,0 @@
-s	o	p	true_label	predict_proba
-Ski_(soda)	Double_Cola	manufacturer	1	0.40648371315770404	
-Dacia_1300	Automobile_Dacia	manufacturer	1	0.08048884665971458	
-Oldsmobile_442	General_Motors	manufacturer	1	0.0	
-Fiat_X1/9	Fiat	manufacturer	1	0.0018120386612525004	
-Fiat_X1/9	General_Motors	manufacturer	-1	0.0013155456483250263	
-Adler_Standard_6	Ferrari	manufacturer	-1	-0.046904041718223245	
-Toyota_RAV4_EV__Second_generation__1	Toyota	manufacturer	1	0.006058164926162862	
-Daimler_250	Daimler_Company	manufacturer	1	0.03601479643360974	
