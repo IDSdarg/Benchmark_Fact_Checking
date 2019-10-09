@@ -8,6 +8,13 @@ It is an addition material of the publication "A Benchmark for Fact Checking Alg
 2. Follow base folders for downloading and installing benchmarking systems: `Knowledge Linker (KL)`, `Discriminative Predicate Path (KGMiner)`, `Path Ranking Algorithm (PRA)`, `Subgraph Feature Extraction (SFE)`, `Parallel Graph Embedding (Para_GraphE)` 
    
    Each system has some modifications from the original version, according to the experiments considered in this work.
+   
+## References:
+1. https://github.com/nddsg/KGMiner
+2. https://github.com/matt-gardner/pra
+3. https://github.com/glciampaglia/knowledge_linker
+4. https://github.com/LIBBLE/LIBBLE-MultiThread/tree/master/ParaGraphE
+5. https://github.com/stefano-ortona/rudik
 
 
 
