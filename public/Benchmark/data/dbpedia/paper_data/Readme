@@ -1,5 +1,10 @@
 1. File Name Convention: A_cB_hC_sD_rE_F_scenario.tsv
-
-where 
+where:
+  * A: test/train
+  * B: transparency
+  * C: homogeneity
+  * D: size of scenario
+  * E: ratio true/false fact
+  * F: popularity
 
 2. File Content Structure
