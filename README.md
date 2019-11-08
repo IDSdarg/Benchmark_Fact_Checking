@@ -11,6 +11,7 @@ It is an additional material of the publication "A Benchmark for Fact Checking A
       * node_dict.tsv: contains entities and corresponding indices. Ex: Paris 12345, France 25672
       * edge_dict.tsv: contains predicates. Ex: capital 100
       * edges.tsv: contains fact triples in the form of (s, o, p). Ex: 12345 25672 100 represents for (Paris, France, capital)
+   * To load the graph server: please navigate to KG-Miner folder and run ./run_server.sh
       
 3. Follow base folders for downloading and installing benchmarking systems: `Knowledge Linker (KL) [1]`, `Discriminative Predicate Path (KGMiner) [2]`, `Subgraph Feature Extraction (SFE) [3]`, `Parallel Graph Embedding (Para_GraphE) [4]`, `Rule Discover [5]` 
    
