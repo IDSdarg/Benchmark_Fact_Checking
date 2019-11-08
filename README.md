@@ -8,7 +8,9 @@ It is an additional material of the publication "A Benchmark for Fact Checking A
 2. For the Knowlegde graph, we employ the DBPedia repository from `KGMiner [2]`, including enties, predicates and facts in the form of triples. 
    * Download: https://www.dropbox.com/s/yqlom6t5ehze0uq/data.zip?dl=1
    * Extract the zip file and place the files `node_dict.tsv`, `edge_dict.tsv` in folder `../data/dbpedia/graphs/` and file `edges.tsv` in folder `../data/dbpedia/graphs/graph_chi/` 
-      * ezr
+      * node_dict.tsv: contains entities and corresponding indices. Ex: Paris 12345, France 25672
+      * edge_dict.tsv: contains predicates. Ex: capital 100
+      * edges.tsv: contains fact triples in the form of (s, o, p). Ex: 12345 25672 100 represents for (Paris, France, capital)
       
 3. Follow base folders for downloading and installing benchmarking systems: `Knowledge Linker (KL) [1]`, `Discriminative Predicate Path (KGMiner) [2]`, `Subgraph Feature Extraction (SFE) [3]`, `Parallel Graph Embedding (Para_GraphE) [4]`, `Rule Discover [5]` 
    
