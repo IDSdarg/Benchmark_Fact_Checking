@@ -5,7 +5,9 @@ It is an additional material of the publication "A Benchmark for Fact Checking A
 
 ## Download & Install
 1. The benchmark server is written by **[Nodejs](https://nodejs.org/en/download/)**. Follow `package.json` to install dependencies.
-2. Follow base folders for downloading and installing benchmarking systems: `Knowledge Linker (KL) [1]`, `Discriminative Predicate Path (KGMiner) [2]`, `Subgraph Feature Extraction (SFE) [3]`, `Parallel Graph Embedding (Para_GraphE) [4]`, `Rule Discover [5]` 
+2. We employ the DBPedia repository from `KGMiner [2]`, including enties, predicates and facts in the form of triples. 
+   * Download: https://www.dropbox.com/s/yqlom6t5ehze0uq/data.zip?dl=1
+3. Follow base folders for downloading and installing benchmarking systems: `Knowledge Linker (KL) [1]`, `Discriminative Predicate Path (KGMiner) [2]`, `Subgraph Feature Extraction (SFE) [3]`, `Parallel Graph Embedding (Para_GraphE) [4]`, `Rule Discover [5]` 
    
    Each system has some modifications from the original version, according to the experiments considered in this work.
    
