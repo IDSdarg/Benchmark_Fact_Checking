@@ -5,8 +5,9 @@ It is an additional material of the publication "A Benchmark for Fact Checking A
 
 ## Download & Install
 1. The benchmark server is written by **[Nodejs](https://nodejs.org/en/download/)**. Follow `package.json` to install dependencies.
-2. We employ the DBPedia repository from `KGMiner [2]`, including enties, predicates and facts in the form of triples. 
+2. For the Knowlegde graph, we employ the DBPedia repository from `KGMiner [2]`, including enties, predicates and facts in the form of triples. 
    * Download: https://www.dropbox.com/s/yqlom6t5ehze0uq/data.zip?dl=1
+   * Extract the zip file and place the files `node_dict.tsv`, `edge_dict.tsv` in folder `../data/dbpedia/graphs/` and file `edges.tsv` in folder `../data/dbpedia/graphs/graph_chi/` 
 3. Follow base folders for downloading and installing benchmarking systems: `Knowledge Linker (KL) [1]`, `Discriminative Predicate Path (KGMiner) [2]`, `Subgraph Feature Extraction (SFE) [3]`, `Parallel Graph Embedding (Para_GraphE) [4]`, `Rule Discover [5]` 
    
    Each system has some modifications from the original version, according to the experiments considered in this work.
